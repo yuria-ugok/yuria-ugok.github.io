@@ -2,6 +2,17 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
+nav ul {
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    width: 80px;
+    margin: 15px;
+    padding: 5px;
+    padding-bottom: 0px;
+}
 
 a {
     text-decoration: none;
@@ -12,6 +23,10 @@ a:visited {
     color: black;
 }
 
+a:hover {
+    color: dimgray;
+}
+
 #index img {
     width: 1000px;
     height: 400px;
@@ -20,11 +35,11 @@ a:visited {
 
 .home img {
     display: inline-block;
-    width: 300px;
-    
+    width: 400px;
+    margin: 15px;
 }
 
-header, h2, h3, p {
+header, h2, h3, p, .home {
     color: black;
     text-align: center;
 }
@@ -37,15 +52,12 @@ h2 {
     float: left;
     width: 250px;
     height: 250px;
-    margin-left: 100px;
+    margin-top: -30px;
+    margin-left: 110px;
 }
 
 .profile p, h3 {
-    margin: 25px 0px 25px 400px;
-}
-
-.profile p::first-line {
-    margin-top: 50px;
+    margin: 25px 0px 25px 380px;
 }
 
 p {
@@ -54,4 +66,9 @@ p {
 
 .contact h2 {
     clear: both;
+    margin-top: 100px;
+}
+
+.contact p {
+    margin-bottom: 100px;
 }
