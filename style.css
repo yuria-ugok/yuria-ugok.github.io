@@ -1,3 +1,56 @@
+body {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    color: black;
+}
+
+#index img {
+    width: 1000px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.home img {
+    display: inline-block;
+    width: 300px;
+    
+}
+
+header, h2, h3, p {
+    text-align: center;
+}
+
+h2 {
+    margin: 50px;
+}
+
+.profile img{
+    float: left;
+    width: 250px;
+    height: 250px;
+    margin-left: 100px;
+}
+
+.profile p, h3 {
+    margin: 25px 0px 25px 400px;
+}
+
+.profile p::first-line {
+    margin-top: 50px;
+}
+
 p {
-  color: firebrick;
+    margin: 25px;
+}
+
+.contact h2 {
+    clear: both;
 }
