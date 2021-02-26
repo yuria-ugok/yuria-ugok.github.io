@@ -25,6 +25,7 @@ a:visited {
 }
 
 header, h2, h3, p {
+    color: black;
     text-align: center;
 }
 
