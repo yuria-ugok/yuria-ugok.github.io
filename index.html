@@ -10,8 +10,28 @@
     <link href="https://fonts.googleapis.com/css2?family=Asap&family=Open+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
-    <script src="js/jquery.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="jquery.min.js"></script>
+    <script>
+        jQuery(function() {
+    var pagetop = $('#page_top');   
+    pagetop.hide();
+    $(window).scroll(function () {
+        if ($(this).scrollTop() > 500) {  //500pxスクロールしたら表示
+            pagetop.fadeIn();
+        } else {
+            pagetop.fadeOut();
+        }
+    });
+  $('a[href^="#"]').click(function(){
+    var time = 500;
+    var href= $(this).attr("href");
+    var target = $(href == "#" ? 'html' : href);
+    var distance = target.offset().top;
+    $("html, body").animate({scrollTop:distance}, time, "swing");
+    return false;
+  });
+});
+    </script>
 </head>
 
 <body>
@@ -34,19 +54,48 @@
             <h2>Works</h2>
             <figure>
                 <figcaption>Nov. 2020</figcaption>
-                <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-11%20002713.png" alt="payment"></p>
+                <div class="cover">
+                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-05%20141635.png" alt="payment"></p>
+                    <div class="mask">
+                        <div class="caption">Payment system →</div>
+                    </div>
+                </div>
             </figure>
             <figure>
                 <figcaption>Dec. 2020</figcaption>
-                <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-11%20002127.png"></p>
+                <div class="cover">
+                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-11%20002127.png" alt="fruitstore"></p>
+                    <div class="mask">
+                        <div class="caption">Fruit store →</div>
+                    </div>
+                </div>
             </figure>
             <figure>
                 <figcaption>Feb. 2021</figcaption>
-                <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-28%20153138.png" alt="naracity"></p>
+                <div class="cover">
+                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-28%20153138.png" alt="naracity"></p>
+                    <div class="mask">
+                        <div class="caption">Tourism website →</div>
+                    </div>
+                </div>
             </figure>
             <figure>
                 <figcaption>Mar. 2021</figcaption>
-                <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-03%20140048.png" alt="sdgsquiz"></p>
+                <div class="cover">
+                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-03%20140048.png" alt="sdgsquiz"></p>
+                    <div class="mask">
+                        <div class="caption">Quiz App →</div>
+                    </div>
+                </div>
+            </figure>
+            <figure>
+                <figcaption>Sep. 2020</figcaption>
+                <div class="cover">
+                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-05%20142526.png" alt="cgbattle"></p>
+                    <div class="mask">
+                        <div class="caption">CG animation →</div>
+                    </div>
+                </div>
             </figure>
         </section>
 
@@ -92,7 +141,7 @@
             </button>
         </section>
     </main>
-    
+
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
     <div id="page_top"><a href="#"></a></div>
 
