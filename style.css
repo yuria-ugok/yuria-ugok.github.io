@@ -2,7 +2,6 @@ body {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
-    font-family: 'Asap', sans-serif;
     font-family: 'Open Sans', sans-serif;
 }
 
@@ -70,12 +69,18 @@ h3 {
     font-size: 22px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     letter-spacing: 0.05em
 }
 
-a, p, figcaption {
+a, figcaption {
     font-size: 18px;
+}
+
+p {
+    font-size: 17px;
 }
 
 #index img {
@@ -86,18 +91,12 @@ a, p, figcaption {
 
 .works figure {
     display: inline-block;
-    width: 400px;
     margin: 30px;
 }
 
-.works img {
-    display: flex;
+.works img:not(.skillicon) {
     width: 400px;
-    height: 220px;
-}
-
-.works p {
-    margin: 0;
+    height: 221px;
 }
 
 .works figcaption {
@@ -105,32 +104,153 @@ a, p, figcaption {
 }
 
 .cover {
-	overflow: hidden;
-	position: relative;
+    overflow: hidden;
+    position: relative;
 }
 
 .cover .caption {
-	font-size: 140%;
-	color: dimgray;
+    font-size: 140%;
+    color: dimgray;
     text-align: right;
     padding-top: 170px;
     padding-right: 130px;
 }
 
 .cover .mask {
-	width: 100%;
-	height: 100%;
-	position: absolute;
-	top: 0;
-	left: 0;
-	opacity: 0;
-	background-color: rgba(255,255,255,0.6);
-	transition:	all 0.6s ease;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: all 0.6s ease;
 }
 
 .cover:hover .mask {
-	opacity: 1;
-	padding-left: 110px;
+    opacity: 1;
+    padding-left: 110px;
+}
+
+/* ポップアップウインドウの設定 */
+.popup-payment, .popup-store, .popup-tourism, .popup-quiz, .popup-cgbattle {
+    background-color: white;
+    box-shadow: 0 0 0 9999px rgba(0, 0, 0, .8);
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 10%;
+    left: 10%;
+    right: 10%;
+    bottom: 10%;
+    width: 80%;
+    height: 80%;
+    overflow-y: scroll;
+}
+
+/* チェックボックスの初期設定 */
+#popup-onpay, #popup-onstore, #popup-ontour, #popup-onquiz, #popup-oncgbattle {
+    display: none;
+}
+
+/* チェックされたらポップアップウインドウを開く */
+#popup-onpay:checked + .popup-payment, #popup-onstore:checked + .popup-store, #popup-ontour:checked + .popup-tourism, #popup-onquiz:checked + .popup-quiz, #popup-oncgbattle:checked + .popup-cgbattle {
+    display: block;
+}
+
+/* 閉じるアイコン（右上） */
+.icon-close {
+    color: black;
+    font-size: 50px;
+    padding: 0 15px;
+    position: fixed;
+    cursor: pointer;
+    right: 11.5%;
+}
+
+/* 開くボタン */
+.btn-open {
+    cursor: pointer;
+}
+
+/* ポップアップの内容 */
+.popup-content {
+    margin: 40px auto;
+    width: 90%;
+    display: block;
+}
+
+.popup-content h2 {
+    margin: 0;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.popup-content p, .popup-cgbattle figcaption {
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.popup-content img:not(.skillicon), .popup-content video, .popup-cgbattle figure {
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.popup-store img:not(.skillicon) {
+    width: 400px;
+    height: auto;
+}
+
+.popup-tourism img:not(.skillicon) {
+    width: 500px;
+    height: auto;
+}
+
+.popup-tourism .skillicon {
+    width: 110px;
+}
+
+.popup-quiz img:not(.skillicon) {
+    width: auto;
+    height: 160px;
+}
+
+.popup-cgbattle video {
+    width: 400px;
+    height: auto;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.popup-cgbattle figure {
+    margin: 0 20px;
+}
+
+.popup-cgbattle img:not(.skillicon) {
+    width: 350px;
+    height: auto;
+}
+
+.popup-cgbattle .skillicon {
+    width: 60px;
+    margin: 25px 0 15px 20px;
+}
+
+.skillicon {
+    float: left;
+    width: 130px;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.popup-content p {
+    clear: both;
+    margin: 0;
+    margin-top: 10px;
+    margin-left: 60px;
+    text-align: left;
 }
 
 .deer {
@@ -140,7 +260,8 @@ a, p, figcaption {
     margin-left: 110px;
 }
 
-.profile p, .profile h3 {
+.profile p,
+.profile h3 {
     margin: 25px 0px 25px 380px;
 }
 
@@ -164,97 +285,114 @@ a, p, figcaption {
     margin-top: 120px;
 }
 
-.icon-github, svg {
+.icon-github,
+svg {
     margin-left: 15px;
     margin-right: 15px;
 }
 
 .tooltip {
-  position: relative; /* ツールチップの位置の基準に */
-  cursor: pointer; /* カーソルを当てたときにポインターに */
+    position: relative;
+    /* ツールチップの位置の基準に */
+    cursor: pointer;
+    /* カーソルを当てたときにポインターに */
     background-color: white;
     border: 0px none;
 }
 
 .tooltip-text {
-  opacity: 0; /* はじめは隠しておく */
-  visibility: hidden; /* はじめは隠しておく */
-  position: absolute; /* 絶対配置 */
-  left: 50%; /* 親に対して中央配置 */
-  transform: translateX(-50%); /* 親に対して中央配置 */
-  bottom: -31px; /* 親要素下からの位置 */
-  display: inline-block;
-  padding: 7px; /* 余白 */
-  white-space: nowrap; /* テキストを折り返さない */
-  font-size: 0.8rem; /* フォントサイズ */
-  line-height: 1.3; /* 行間 */
-  background: #333; /* 背景色 */
-  color: #fff; /* 文字色 */
-  border-radius: 3px; /* 角丸 */
-  transition: 0.3s ease-in; /* アニメーション */
+    opacity: 0;
+    /* はじめは隠しておく */
+    visibility: hidden;
+    /* はじめは隠しておく */
+    position: absolute;
+    /* 絶対配置 */
+    left: 50%;
+    /* 親に対して中央配置 */
+    transform: translateX(-50%);
+    /* 親に対して中央配置 */
+    bottom: -31px;
+    /* 親要素下からの位置 */
+    display: inline-block;
+    padding: 7px;
+    /* 余白 */
+    white-space: nowrap;
+    /* テキストを折り返さない */
+    font-size: 0.8rem;
+    /* フォントサイズ */
+    line-height: 1.3;
+    /* 行間 */
+    background: #333;
+    /* 背景色 */
+    color: #fff;
+    /* 文字色 */
+    border-radius: 3px;
+    /* 角丸 */
+    transition: 0.3s ease-in;
+    /* アニメーション */
 }
 
 .tooltip:hover .tooltip-text {
-  opacity: 1;
-  visibility: visible;
+    opacity: 1;
+    visibility: visible;
 }
 
 .tooltip-text:before {
-	content: '';
-	position: absolute;
-	top: -13px;
-	left: 50%;
-	margin-left: -7px;
-	border: 7px solid transparent;
-	border-bottom: 7px solid #333;
+    content: '';
+    position: absolute;
+    top: -13px;
+    left: 50%;
+    margin-left: -7px;
+    border: 7px solid transparent;
+    border-bottom: 7px solid #333;
 }
 
-#page_top{
-  width: 90px;
-  height: 90px;
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  opacity: 0.6;
+#page_top {
+    width: 90px;
+    height: 90px;
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    opacity: 0.6;
 }
 
-#page_top a{
-  position: relative;
-  display: block;
-  width: 90px;
-  height: 90px;
-  text-decoration: none;
+#page_top a {
+    position: relative;
+    display: block;
+    width: 90px;
+    height: 90px;
+    text-decoration: none;
 }
 
-#page_top a::before{
-  font-family: 'Font Awesome 5 Free';
-  font-weight: 900;
-  content: '\f102';
-  font-size: 25px;
-  color: black;
-  position: absolute;
-  width: 25px;
-  height: 25px;
-  top: -40px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center;
+#page_top a::before {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f102';
+    font-size: 25px;
+    color: black;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -40px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
 }
 
-#page_top a::after{
-  content: 'PAGE TOP';
-  font-size: 13px;
-  color: white;
-  position: absolute;
-  top: 45px;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  margin: auto;
-  text-align: center;
-  color: black;
+#page_top a::after {
+    content: 'PAGE TOP';
+    font-size: 13px;
+    color: white;
+    position: absolute;
+    top: 45px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+    color: black;
 }
 
 

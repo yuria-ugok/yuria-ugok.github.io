@@ -6,31 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Yuria's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="image/favicon.ico">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Asap&family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Asap&family=Open+Sans&display=swap">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans+JP">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.4/css/all.css">
     <script src="jquery.min.js"></script>
     <script>
         jQuery(function() {
-    var pagetop = $('#page_top');   
-    pagetop.hide();
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 500) {  //500pxスクロールしたら表示
-            pagetop.fadeIn();
-        } else {
-            pagetop.fadeOut();
-        }
-    });
-  $('a[href^="#"]').click(function(){
-    var time = 500;
-    var href= $(this).attr("href");
-    var target = $(href == "#" ? 'html' : href);
-    var distance = target.offset().top;
-    $("html, body").animate({scrollTop:distance}, time, "swing");
-    return false;
-  });
-});
+            var pagetop = $('#page_top');
+            pagetop.hide();
+            $(window).scroll(function() {
+                if ($(this).scrollTop() > 100) { //100pxスクロールしたら表示
+                    pagetop.fadeIn();
+                } else {
+                    pagetop.fadeOut();
+                }
+            });
+            $('a[href^="#"]').click(function() {
+                var time = 500;
+                var href = $(this).attr("href");
+                var target = $(href == "#" ? 'html' : href);
+                var distance = target.offset().top;
+                $("html, body").animate({
+                    scrollTop: distance
+                }, time, "swing");
+                return false;
+            });
+        });
     </script>
 </head>
 
@@ -54,46 +57,141 @@
             <h2>Works</h2>
             <figure>
                 <figcaption>Nov. 2020</figcaption>
-                <div class="cover">
-                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-05%20141635.png" alt="payment"></p>
-                    <div class="mask">
-                        <div class="caption">Payment system →</div>
+                <label for="popup-onpay">
+                    <div class="btn-open">
+                        <div class="cover">
+                            <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-05%20141635.png" alt="payment" class="payment">
+                            <div class="mask">
+                                <div class="caption">Payment system →</div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input type="checkbox" id="popup-onpay">
+                <div class="popup-payment">
+                    <label for="popup-onpay" class="icon-close">×</label>
+                    <div class="popup-content">
+                        <!-- ポップアップの中身 -->
+                        <h2>Payment system</h2>
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-05%20141635.png">
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-06%20185359.png">
+                        <img src="image/rectangle_large_type_2_e9959c0ac30cb740c733aa3ed0ac3c89.png" class="skillicon">
+                        <p>NoCode Bubbleでの初作品。公式プラグインStripeを使った決済システムです。</p>
+                        <!-- ./ポップアップの中身　ここまで -->
                     </div>
                 </div>
             </figure>
             <figure>
                 <figcaption>Dec. 2020</figcaption>
-                <div class="cover">
-                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-11%20002127.png" alt="fruitstore"></p>
-                    <div class="mask">
-                        <div class="caption">Fruit store →</div>
+                <label for="popup-onstore">
+                    <div class="btn-open">
+                        <div class="cover">
+                            <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-11%20002127.png" alt="fruitstore" class="fruitstore">
+                            <div class="mask">
+                                <div class="caption">Fruit store →</div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input type="checkbox" id="popup-onstore">
+                <div class="popup-store">
+                    <label for="popup-onstore" class="icon-close">×</label>
+                    <div class="popup-content">
+                        <!-- ポップアップの中身 -->
+                        <h2>Fruit Store</h2>
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202020-12-23%20143058.png">
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202020-12-23%20143531.png">
+                        <img src="image/rectangle_large_type_2_e9959c0ac30cb740c733aa3ed0ac3c89.png" class="skillicon">
+                        <p>Stripeを利用したフルーツのショッピングサイトです。注文完了メールも送れます。</p>
+                        <!-- ./ポップアップの中身　ここまで -->
                     </div>
                 </div>
             </figure>
             <figure>
                 <figcaption>Feb. 2021</figcaption>
-                <div class="cover">
-                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-28%20153138.png" alt="naracity"></p>
-                    <div class="mask">
-                        <div class="caption">Tourism website →</div>
+                <label for="popup-ontour">
+                    <div class="btn-open">
+                        <div class="cover">
+                            <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-28%20153138.png" alt="naracity" class="naracity">
+                            <div class="mask">
+                                <div class="caption">Tourism website →</div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input type="checkbox" id="popup-ontour">
+                <div class="popup-tourism">
+                    <label for="popup-ontour" class="icon-close">×</label>
+                    <div class="popup-content">
+                        <!-- ポップアップの中身 -->
+                        <h2>Tourism website</h2>
+                        <img src="image/NaraCitySite_index.html.png">
+                        <div class="details">
+                            <img src="image/61a07b49-1226386.png" class="skillicon">
+                            <p>地域観光サイトです。スライドショーやホバーエフェクトで画面に動きを持たせました。</p>
+                        </div>
+                        <!-- ./ポップアップの中身　ここまで -->
                     </div>
                 </div>
             </figure>
             <figure>
                 <figcaption>Mar. 2021</figcaption>
-                <div class="cover">
-                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-03%20140048.png" alt="sdgsquiz"></p>
-                    <div class="mask">
-                        <div class="caption">Quiz App →</div>
+                <label for="popup-onquiz">
+                    <div class="btn-open">
+                        <div class="cover">
+                            <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-03%20140048.png" alt="sdgsquiz" class="sdgsquiz">
+                            <div class="mask">
+                                <div class="caption">Quiz App →</div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input type="checkbox" id="popup-onquiz">
+                <div class="popup-quiz">
+                    <label for="popup-onquiz" class="icon-close">×</label>
+                    <div class="popup-content">
+                        <!-- ポップアップの中身 -->
+                        <h2>SDGs Quiz App</h2>
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-20%20233704.png">
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-21%20183702.png">
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-21%20175726.png">
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-02-21%20175530.png">
+                        <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-09%20150116.png">
+                        <div class="details">
+                            <img src="image/rectangle_large_type_2_e9959c0ac30cb740c733aa3ed0ac3c89.png" class="skillicon">
+                            <p>SDGsについて簡単に学べる２択クイズアプリです。全問正解すると木が成長します。</p>
+                        </div>
+                        <!-- ./ポップアップの中身　ここまで -->
                     </div>
                 </div>
             </figure>
             <figure>
                 <figcaption>Sep. 2020</figcaption>
-                <div class="cover">
-                    <p><img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-05%20142526.png" alt="cgbattle"></p>
-                    <div class="mask">
-                        <div class="caption">CG animation →</div>
+                <label for="popup-oncgbattle">
+                    <div class="btn-open">
+                        <div class="cover">
+                            <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%202021-03-05%20142526.png" alt="cgbattle" class="cgbattle">
+                            <div class="mask">
+                                <div class="caption">CG animation →</div>
+                            </div>
+                        </div>
+                    </div>
+                </label>
+                <input type="checkbox" id="popup-oncgbattle">
+                <div class="popup-cgbattle">
+                    <label for="popup-oncgbattle" class="icon-close">×</label>
+                    <div class="popup-content">
+                        <!-- ポップアップの中身 -->
+                        <h2>CG animation</h2>
+                        <video src="image/2D09Kaji.mp4" controls muted autoplay playinline loop>動画が再生できません。</video>
+                        <figure>
+                            <img src="image/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88%20(2).png">
+                            <figcaption>Mayaでの制作過程</figcaption>
+                        </figure>
+                        <img src="image/Maya-940x940.png" class="skillicon">
+                        <img src="image/ae_icon_cc.png" class="skillicon">
+                        <p>MayaでCGアニメーションを作成し、Adobe After Effectsで合成したウサギとイヌの決闘シーンです。</p>
+                        <!-- ./ポップアップの中身　ここまで -->
                     </div>
                 </div>
             </figure>
@@ -150,4 +248,6 @@
         <p>Copyright (c) 2021- Yuria</p>
     </footer>
 
-</body></html>
+</body>
+
+</html>
